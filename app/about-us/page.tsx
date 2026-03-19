@@ -1,6 +1,5 @@
-import React from "react";
+async function page() {
 
-function page() {
   return (
     <div className="w-full min-h-screen flex flex-col items-center mt-20">
       <div className="bg-gray-50 w-1/2 flex flex-col items-center p-10 rounded-2xl shadow-lg">

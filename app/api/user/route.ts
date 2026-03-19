@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/db";
+import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import { z } from "zod";
@@ -8,6 +8,11 @@ const userSchema = z.object({
     email: z.email(),
     password: z.string().min(6),
 });
+
+export async function GET(req: Request) {
+    
+    return NextResponse.json({message: "User fetched successfully"}, { status: 200 });
+}
 
 export async function POST(req: Request) {
     const { email, password } = await req.json();
@@ -19,14 +24,14 @@ export async function POST(req: Request) {
         return NextResponse.json({ message: "Password is required" }, { status: 400 });
     }
 
-    const existingUser = await prisma.user.findUnique({ where: { email } });
+    const existingUser = await db.user.findUnique({ where: { email } });
     if(existingUser) {
         return NextResponse.json({ message: "User already exists" }, { status: 400 });
     }
     
      const hashedPassword = await bcrypt.hash(password, 10);
 
-    const user = await prisma.user.create({
+    const user = await db.user.create({
         data: {
             email,
             password: hashedPassword,

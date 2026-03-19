@@ -1,7 +1,7 @@
-import { prisma } from "../lib/db";
+import { db } from "../lib/db";
 
 export default async function Home() {
-  const user = await prisma.user.findMany();
+  const user = await db.user.findMany();
   return (
     <div className="w-full min-h-screen flex flex-col items-center mt-20">
       <h2 className="text-4xl font-bold">Welcome to the InternHub</h2>
