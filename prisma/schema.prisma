@@ -23,6 +23,8 @@ model User {
 
 //user can manage multiple departments
   departmentsManaged Department[]
+
+  infos Info[]
 }
 
 model Department {
@@ -32,6 +34,8 @@ model Department {
   managerId Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  infos Info[]
 }
 
 enum role {
@@ -39,6 +43,22 @@ enum role {
   Manager
   HR
   Intern
+}
+
+model Info {
+  id  Int @id @default(autoincrement())
+  userId Int @unique
+  user User @relation(fields: [userId], references: [id])
+  fullName String
+  phone String
+  address String
+  college String
+  degree String
+  course String
+  departmentId Int
+  department Department @relation(fields: [departmentId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 
