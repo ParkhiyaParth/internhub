@@ -41,3 +41,8 @@ yarn-error.log*
 next-env.d.ts
 
 /app/generated/prisma
+
+# ai-chatbot generated artifacts
+ai-chatbot/__pycache__/
+ai-chatbot/chroma_db/
+*.pyc

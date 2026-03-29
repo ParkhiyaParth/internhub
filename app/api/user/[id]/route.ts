@@ -27,10 +27,10 @@ const GET_INTERN_INFO = gql`
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } },
+  { params }: { params: Promise<{ id: string }> },
 ) {
   const session = await requireAuth(req, ["Admin", "Manager", "HR", "Intern"]);
-  let data;
+  let data: any;
   const { id } = await params;
 
   if (!session) {

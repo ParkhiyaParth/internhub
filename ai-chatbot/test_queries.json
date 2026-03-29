@@ -1,0 +1,62 @@
+[ 
+  {
+    "question": "How many interns are in each department?",
+    "expected_sql_pattern": "JOIN interns i|GROUP BY d.name",
+    "expected_behavior": "Returns department-wise intern counts"
+  },
+  {
+    "question": "List interns with mentor name and department",
+    "expected_sql_pattern": "JOIN users mentor|JOIN departments d",
+    "expected_behavior": "Includes intern user, mentor, and department columns"
+  },
+  {
+    "question": "How many interns have CGPA above 7.5?",
+    "expected_sql_pattern": "WHERE i.cgpa > 7.5",
+    "expected_behavior": "Returns a numeric count"
+  },
+  {
+    "question": "Show interns skilled in Python and Next.js",
+    "expected_sql_pattern": "skills ILIKE|skills LIKE",
+    "expected_behavior": "Filters interns by skill keywords"
+  },
+  {
+    "question": "What is the average overall evaluation score by department?",
+    "expected_sql_pattern": "AVG\(e.overall_score\)|GROUP BY d.name",
+    "expected_behavior": "Returns department and avg score"
+  },
+  {
+    "question": "How many tasks are in progress for each intern?",
+    "expected_sql_pattern": "FROM tasks t|status = 'in_progress'|GROUP BY",
+    "expected_behavior": "Returns task counts per intern"
+  },
+  {
+    "question": "Show attendance summary (present, late, absent) for each intern in the last 14 days",
+    "expected_sql_pattern": "FROM attendance a|date >=|CASE WHEN",
+    "expected_behavior": "Returns per-intern attendance distribution"
+  },
+  {
+    "question": "List latest announcement titles and audience",
+    "expected_sql_pattern": "FROM announcements|ORDER BY created_at DESC",
+    "expected_behavior": "Returns announcement metadata"
+  },
+  {
+    "question": "Which interns received suggestion feedback?",
+    "expected_sql_pattern": "FROM intern_feedback f|f.type = 'suggestion'",
+    "expected_behavior": "Returns intern names with feedback"
+  },
+  {
+    "question": "Top 3 interns by overall evaluation score",
+    "expected_sql_pattern": "ORDER BY overall_score DESC|LIMIT 3",
+    "expected_behavior": "Returns top interns by score"
+  },
+  {
+    "question": "How many interns are from Lahore?",
+    "expected_sql_pattern": "WHERE i.city = 'Lahore'",
+    "expected_behavior": "Returns a numeric count"
+  },
+  {
+    "question": "How many users joined in the last 30 days by role?",
+    "expected_sql_pattern": "FROM users|created_at >=|GROUP BY role",
+    "expected_behavior": "Returns role-wise recent join counts"
+  }
+]
