@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# InternHub
+
+InternHub is a Next.js project focused on building an internship-related web application. The repository is structured as a modern frontend application created with the Next.js app router workflow.
+
+## Project Overview
+
+This project can be used as a base for an internship platform where users may explore opportunities, view information, or interact with internship-related features. It is also a strong portfolio project for practicing Next.js, React, TypeScript, and modern frontend development.
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- npm / yarn / pnpm / bun
+- App Router
+- Geist font optimization through `next/font`
+
+## Project Structure
+
+```text
+internhub/
+├── app/
+│   └── page.tsx
+├── public/
+├── package.json
+└── README.md
+```
+
+The exact structure may change as features are added.
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository:
+
+```bash
+git clone https://github.com/ParkhiyaParth/internhub.git
+cd internhub
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
+```
+
+You can also use:
+
+```bash
 yarn dev
-# or
 pnpm dev
-# or
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the application in your browser:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development Notes
 
-## Learn More
+Start editing the project from:
 
-To learn more about Next.js, take a look at the following resources:
+```text
+app/page.tsx
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The page will automatically update as you edit the file during development.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Learning Outcomes
 
-## Deploy on Vercel
+This repository helps practice:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Next.js project setup
+- App Router structure
+- React component development
+- TypeScript-based frontend development
+- Frontend project documentation
+- Deployment-ready web app structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Future Improvements
+
+- Add internship listing pages
+- Add user profile pages
+- Add search and filter functionality
+- Add backend/API integration
+- Add authentication
+- Add screenshots and live demo link
+
+## Deployment
+
+The project can be deployed using Vercel or any platform that supports Next.js.
+
+## Author
+
+**Parth Parkhiya**
+
+GitHub: [ParkhiyaParth](https://github.com/ParkhiyaParth)
